@@ -1,0 +1,41 @@
+<template name="chat">
+	{{#if isLoggedIn}}
+		{{ > chatLoggedIn }}
+	{{else}}
+		{{ > chatNotLoggedIn }}
+	{{/if}}
+</template>
+
+<template name="chatLoggedIn">
+	<h4>You are logged in as <b>{{nickname}}</b></h4>
+	<div class="form-group">
+		<label for="inputEmail">Enter chat message</label>
+		<input type="text" class="form-control" id="inputMessage">
+	</div>
+	<button id="btnSend" class="btn btn-primary">Send</button>
+
+	<br/><br/>
+
+	{{ > chatMessages }}
+</template>
+
+<template name="chatMessages">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3 class="panel-title">Chat messages</h3>
+		</div>
+		<div class="panel-body">
+			{{#each messagesList}}
+				<b>{{nickname}}</b>: {{message}}<br/>
+			{{/each}}
+		</div>
+	</div>
+</template>
+
+<template name="chatNotLoggedIn">
+	<div class="form-group">
+		<label for="inputEmail">Choose chat nickname</label>
+		<input type="text" class="form-control" id="inputNickname">
+	</div>
+	<button id="btnChoose" class="btn btn-primary">Choose</button>
+</template>

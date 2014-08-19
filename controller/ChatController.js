@@ -1,0 +1,2 @@
+ChatController = BaseController.extend({
+});

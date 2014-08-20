@@ -12,6 +12,8 @@ Meteorizer
 How to run:
 
 git clone https://github.com/AlexandruGodri/MeteorSampleChat
+
 cd MeteorSampleChat
+
 mrt
 
